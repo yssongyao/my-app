@@ -1,4 +1,5 @@
 import React,  { useState } from "react";
+import './Navigation.css';
 
 const Navigation = () => {
   const [selectedNavItem, setSelectedNavItem] = useState("News");

@@ -1,0 +1,50 @@
+.Navigation {
+    color: #d3d3d3;
+    font-family:"Arial"; 
+    font-weight: bold; 
+    font-size: 1.5em;  
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: right;
+    padding: 5px;
+    box-align: middle;    
+    top: 0;
+    z-index: 999;
+  }
+  ul.NavigationMenus {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  ul.NavigationMenus li {
+    list-style: none;
+    margin-right: 30px;
+    
+  }
+  ul.NavigationMenus li a {
+    text-decoration: none;    
+    color: #fff;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  ul.NavigationMenus li a:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: #fff;
+    height: 1px;
+    width: 0%;
+    bottom: 0;
+    transition: 0.3s;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+  }
+  
+  ul.NavigationMenus li a:hover:after{
+    width: 100%;
+    transition: 0.3s;
+  }
+  
