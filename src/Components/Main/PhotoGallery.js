@@ -8,20 +8,19 @@ import news3 from './assets/image/news3.jpg';
 const PhotoGallery = () => {
 
   return (
-    <div className="PhotoGallery" id="PhotoGallery">
-      <h3>PhotoGallery</h3>
+    <div className="PhotoGallery" id="PhotoGallery">      
       <Carousel>
         <div>
           <img src={news1} alt="the first news" />
-          <p className="legend">Photo 1</p>
+          <p className="legend">Players celebration</p>
         </div>
         <div>
           <img src={news2} alt="the second news" />
-          <p className="legend">Photo 2</p>
+          <p className="legend">2nd Star: 20th Champion</p>
         </div>
         <div>
           <img src={news3} alt="the third news" />
-          <p className="legend">Photo 3</p>
+          <p className="legend">All team members celebration</p>
         </div>
       </Carousel>
     </div>
