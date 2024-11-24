@@ -4,7 +4,9 @@ export default function Header() {
   return (
     <div className="Header">
         <h1>Welcome</h1>
-        <p>The Inter Milan Club Community is a fantastic information hub and communication platform for Inter Milan fans</p>
+        <p>The Inter Milan Club Community is a fantastic information hub and communication platform for Inter Milan fans
+          <br /><br /><br /><br /><br /><br /><br /><br />
+        </p>
     </div>
   );
 } 

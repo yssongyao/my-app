@@ -19,3 +19,9 @@
 }
 
 .Footer {clear: both; width: 100%; text-align: center; color: white;}
+
+.Logo {width: 100%; background-image: url(assets/image/black_blue.jpg); background-repeat: repeat; background-size: 108px }
+
+.Background {background-image:url(assets/image/Milano-stadio_Meazza.jpeg);background-size: 100% 100%;}
+
+.Header {font-weight: bold;}
