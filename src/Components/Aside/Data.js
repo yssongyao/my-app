@@ -1,10 +1,11 @@
 import React from 'react';
+import './Data.css';
 
 const Data = () => {
     return (
         <div className="Data">
             <h2>Data</h2>
-            <h3>Club standing after Matchday 33</h3>
+            <h3 style={{textAlign: 'center'}}>Club standing after Matchday 33</h3>
             <table width="100%">      
                 <thead>
                 <tr>

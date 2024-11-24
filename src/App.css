@@ -11,11 +11,11 @@
 }
 
 .MainSection {
-  width: 60%; float: left; color: white; font-family: "Arial";
+  width: 65%; float: left; color: white; font-family: "Arial";
 }
 
 .AsideSection {
-  width: 40%; float: right; color: white;font-family:"Arial";
+  width: 35%; float: right; color: white;font-family:"Arial";
 }
 
 .Footer {clear: both; width: 100%; text-align: center; color: white;}

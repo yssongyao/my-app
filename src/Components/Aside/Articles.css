@@ -1,0 +1,9 @@
+/* selected link */
+a:active {
+    color: blue;
+    }
+
+/* visited link */
+a:visited {
+color: white;
+}
