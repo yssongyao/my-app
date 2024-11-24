@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFrown } from '@fortawesome/free-solid-svg-icons';
+import './WeatherInfo.css';
 
  
-function Weather() {
+function WeatherInfo() {
     const [input, setInput] = useState('');
     const [weather, setWeather] = useState({
         loading: false,
@@ -71,8 +72,8 @@ function Weather() {
     };
  
     return (
-        <div className="App">
-            <h3 className="app-name">
+        <div className="WeatherInfo">
+            <h3 className="WeatherTitle">
                 Local Weather
             </h3>
             <div className="search-bar">
@@ -132,4 +133,4 @@ function Weather() {
     );
 }
  
-export default Weather;
+export default WeatherInfo;

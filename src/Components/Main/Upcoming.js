@@ -2,7 +2,7 @@ import React from 'react';
 import InterLogo from "../../assets/image/inter_logo.png";
 import TorinoLogo from "../../assets/image/Torino_Logo.png";
 import './Upcoming.css';
-import Weather from './Weather';
+import WeatherInfo from './WeatherInfo';
 
 const Upcoming = () => {
     return (
@@ -15,22 +15,22 @@ const Upcoming = () => {
                  alt='Inter Logo'
                  style={
                     {
-                        width:'12%'
+                        width:'8%'
                     }
                 }
                    />
-                <h1>VS</h1>
+                <h2>VS</h2>
                 <img
                  src={TorinoLogo}
                  alt='Torino Logo'
                  style={
                     {
-                        width:'12%'
+                        width:'8%'
                     }
                 }
                    />
             </div>
-            <Weather />            
+            <WeatherInfo />            
         </div>
     );
 };
