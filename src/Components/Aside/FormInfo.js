@@ -73,7 +73,7 @@ function FormInfo() {
 
   <div className="FormInfo">
     {Object.keys(errors).length===0 && submitting ? (
-      <span children="success">Successfully submitted ✓</span>
+      <span className="success">Successfully submitted ✓</span>
     ): null}
 
     
@@ -163,7 +163,7 @@ function FormInfo() {
               border: errors.msg ? "3px solid red" : null                               
           }                 
          }    
-      placeholder="Enter your message" 
+      placeholder="Enter your message with maximum 50 characters" 
       required>
       </textarea>
       {errors.msg ? (
@@ -172,7 +172,7 @@ function FormInfo() {
       
        <br />
 
-       <label For="checkbox">Check all blanks are filled
+       <label For="checkbox">Check all blanks filled
        <input
         type="checkbox"
         name="checkbox"
@@ -181,7 +181,7 @@ function FormInfo() {
         onChange={checkHandler}
       />
       </label>
-      {isChecked  ? (<p style={{color:"lightgreen"}}>Information ready for submition</p>) : null}
+      {isChecked  ? (<p style={{color:"yellow"}}>Information ready for submition</p>) : null}
       
 
       <br />              
