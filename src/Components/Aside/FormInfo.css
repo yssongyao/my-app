@@ -15,6 +15,16 @@ label {
     overflow: hidden;
   }
   
+  textarea {    
+    padding: 5px;
+    margin: 10px;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    overflow: hidden;
+  }
+
+
   form {
     margin-top: 35px;
   }
@@ -36,7 +46,17 @@ label {
   }
   .success {
     font-size: 20px;
-    color: rgb(75, 181, 67);
+    background-color: rgb(75, 181, 67);
+    margin-top: 5px;
+    padding: 5px 5px;
+    border-radius: 5px;
   }
 
-  .CheckText {color: white; font-weight: bold;}
+  .CheckBox {
+    padding: 5px;
+    margin: 0px;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    overflow: hidden;    
+  }

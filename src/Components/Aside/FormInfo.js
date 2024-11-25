@@ -147,6 +147,7 @@ function FormInfo() {
       
       <br />
 
+      <label for="message">Message</label>
       <textarea 
       rows="5" cols="40" 
       type="text"
@@ -171,15 +172,19 @@ function FormInfo() {
       
        <br />
 
+       <label For="checkbox">Check all blanks are filled
        <input
         type="checkbox"
         name="checkbox"
+        className="CheckBox"
         checked={isChecked}
         onChange={checkHandler}
       />
+      </label>
+      {isChecked  ? (<p style={{color:"lightgreen"}}>Information ready for submition</p>) : null}
       
-      <p className="CheckText">{isChecked ? "All fields completed" : "Please fill all blanks"}</p>
-       <br />      
+
+      <br />              
 
       <button type="submit">Submit</button>
 
