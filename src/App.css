@@ -7,7 +7,8 @@
   flex-direction: column;
   text-align: center;
   color: black;  
-  width: 100%;    
+  width: 100%;
+  font-weight: bold;    
 }
 
 .MainSection {
@@ -24,4 +25,3 @@
 
 .Background {background-image:url(assets/image/Milano-stadio_Meazza.jpeg);background-size: 100% 100%;}
 
-.Header {font-weight: bold;}

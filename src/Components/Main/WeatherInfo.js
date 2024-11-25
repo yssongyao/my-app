@@ -84,7 +84,7 @@ function WeatherInfo() {
                     name="query"
                     value={input}
                     onChange={(event) => setInput(event.target.value)}
-                    onKeyPress={search}
+                    onKeyDown={search}
                 />
             </div>
             {weather.loading && (

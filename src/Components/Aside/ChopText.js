@@ -18,7 +18,7 @@ function ChopText (props) {
     <span>
       {hidden ? `${props.text.substr(0, maxChars).trim()} ...` : props.text}
       {hidden ? (
-        <a onClick={() => setHidden(false)} style={{color:"red"}}> show more </a>
+        <a onClick={() => setHidden(false)} style={{color:"yellow"}}> show more </a>
       ) : (
         <a onClick={() => setHidden(true)} style={{color:"red"}}> show less</a>
       )}
