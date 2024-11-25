@@ -3,7 +3,7 @@ import './Data.css';
 
 const Data = () => {
     return (
-        <div className="Data">
+        <div id="Data" className="Data">
             <h2>Data</h2>
             <h3 style={{textAlign: 'center'}}>Club standing after Matchday 33</h3>
             <table width="100%">      

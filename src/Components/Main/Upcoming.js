@@ -6,7 +6,7 @@ import WeatherInfo from './WeatherInfo';
 
 const Upcoming = () => {
     return (
-        <div className="Upcoming">
+        <div id="Upcoming" className="Upcoming">
             <h2>Upcoming</h2>
             <h3 style={{textAlign: 'center'}}>Match Day 34 of Series A</h3>
             <div className='FlexUpcoming'>

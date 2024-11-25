@@ -8,7 +8,7 @@ const secondBlog=`Anna: The players had a perfect match. They have played so per
 const Blog = () => {
     return (
         
-        <div className="Blog">           
+        <div id="Blog" className="Blog">           
             
             <h2>Blog</h2>
             <ul>

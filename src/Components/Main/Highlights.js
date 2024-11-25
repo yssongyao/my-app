@@ -5,7 +5,7 @@ import HideScore from './HideScore';
 
 const Highlights = () => {
     return (
-        <div className="Highlights">
+        <div id="Highlights" className="Highlights">
             <h2>Highlights</h2>
             <HideScore />
             <ReactIframe 

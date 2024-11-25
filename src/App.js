@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import Navigation from "./Components/Navigation/Navigation";
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
@@ -9,6 +10,7 @@ import Logo from "./assets/image/inter_logo.png";
 
 function App() {
   return (
+    
     <div className="App">
         <div className='Logo'>
           <img src={Logo} height="108px" alt="Inter logo" />
@@ -21,6 +23,7 @@ function App() {
         <Aside />
         <Footer />
     </div>
+    
   );
 }
 

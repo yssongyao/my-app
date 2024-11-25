@@ -16,7 +16,7 @@ const HideScore = () => {
         onChange={checkHandler}
       />
       </label>
-      {isChecked  ? (<h3 style={{color:"yellow"}}>Inter Milan vs AC Milan</h3>) 
+      {isChecked  ? (<h3 style={{color:"white"}}>Inter Milan vs AC Milan</h3>) 
       : (<h3 style={{color:"lightgreen"}}>Inter Milan vs AC Milan 2:1</h3>)}
       </form>
     )

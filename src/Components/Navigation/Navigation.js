@@ -1,5 +1,7 @@
 import React,  { useState } from "react";
 import './Navigation.css';
+import {BrowserRouter} from 'react-router-dom';
+import {HashLink as Link} from 'react-router-hash-link';
 
 const Navigation = () => {
   const [selectedNavItem, setSelectedNavItem] = useState("News");
@@ -15,6 +17,7 @@ const Navigation = () => {
 
 
   return (
+    <BrowserRouter>
     <div className="Navigation">
       <ul className="NavigationMenus">
         {navItems.map((item) => {
@@ -24,12 +27,13 @@ const Navigation = () => {
               onClick={() => setSelectedNavItem(item.name)}
               className={selectedNavItem === item.name ? `activeNavItem` : ""}
             >
-              <a href={`#${item.name}`}>{item.title}</a>
+              <Link to={`#${item.name}`}>{item.title}</Link>
             </li>
           );
         })}
       </ul>
     </div>
+    </BrowserRouter>
     );
 };
 
