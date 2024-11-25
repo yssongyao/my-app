@@ -167,7 +167,7 @@ function FormInfo() {
       required>
       </textarea>
       {errors.msg ? (
-            <p className="error">The maximum characters of message is 50</p>
+            <p className="error">The maximum characters of message is 50.</p>
           ) : null}
       
        <br />
@@ -186,7 +186,7 @@ function FormInfo() {
 
       <br />              
 
-      <button type="submit">Submit</button>
+      <button className="SubmitBtn" type="submit">Submit</button>
 
     </form>
 
