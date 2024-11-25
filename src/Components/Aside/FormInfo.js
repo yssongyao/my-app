@@ -24,11 +24,11 @@ function FormInfo() {
 
   const[submitting, setSubmitting] =useState (false);
 
-  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked, setIsChecked] = useState(false);
 
   const checkHandler = () => {
     setIsChecked(!isChecked)
-  }
+  };
 
   const validateValues = (inputValues) => {
     let errors={};
