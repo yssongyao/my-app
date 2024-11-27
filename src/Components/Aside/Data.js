@@ -55,7 +55,8 @@ function RankingTable({ Rankings, filterText }) {
     });
   
     return (
-      <table>
+      <div className='RankingTable'>
+      <table width="100%">
         <thead>
           <tr>
             <th>Position</th>
@@ -66,6 +67,7 @@ function RankingTable({ Rankings, filterText }) {
         </thead>
         <tbody>{rows}</tbody>
       </table>
+      </div>
     );
   }
   
@@ -75,14 +77,15 @@ function SearchBar({
   onFilterTextChange  
 }) {
     return (
-      <form>        
-        <label>               
-          Club Data you are interested:
-          <input type="text" placeholder="Search club name..."
+      <div className='SearchBar'>
+      <form>           
+        <label>Search club name:</label>                       
+        <input type="text" placeholder="Search..."
           value={filterText}
           onChange={(e) => onFilterTextChange(e.target.value)} />
-        </label>
+        <br /><br />        
       </form>
+      </div>
     );
   }
 
