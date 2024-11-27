@@ -1,167 +1,117 @@
 import React from 'react';
 import './Data.css';
+import { useState } from 'react';
 
-const Data = () => {
+function FilterableTable({ Rankings }) {
+
+    const [filterText, setFilterText] = useState('');
+    
     return (
-        <div id="Data" className="Data">
-            <h2>Data</h2>
-            <h3 style={{textAlign: 'center'}}>Club standing after Matchday 33</h3>
-            <table width="100%">      
-                <thead>
-                <tr>
-                    <th>Position</th>
-                    <th>Club</th>
-                    <th>Match day</th>
-                    <th>Points</th>
-                </tr>
-                </thead>
-
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Inter (Champion)</td>
-                    <td>33</td> 
-                    <td>86</td>
-                </tr>
-                
-                <tr>
-                    <td>2</td>
-                    <td>AC Milan</td>
-                    <td>33</td> 
-                    <td>69</td>
-                </tr>
-
-                <tr>
-                    <td>3</td>
-                    <td>Juventus</td>
-                    <td>33</td> 
-                    <td>64</td>
-                </tr>
-
-                <tr>
-                    <td>4</td>
-                    <td>Bologna</td>
-                    <td>33</td> 
-                    <td>62</td>
-                </tr>
-
-                <tr>
-                    <td>5</td>
-                    <td>AS Roma</td>
-                    <td>33</td> 
-                    <td>55</td>
-                </tr>
-
-                <tr>
-                    <td>6</td>
-                    <td>Atalanta</td>
-                    <td>33</td> 
-                    <td>54</td>
-                </tr>
-
-                <tr>
-                    <td>7</td>
-                    <td>Lazio</td>
-                    <td>33</td> 
-                    <td>52</td>
-                </tr>
-
-                <tr>
-                    <td>8</td>
-                    <td>Napoli</td>
-                    <td>33</td> 
-                    <td>49</td>
-                </tr>
-
-                <tr>
-                    <td>9</td>
-                    <td>Fiorentina</td>
-                    <td>33</td> 
-                    <td>47</td>
-                </tr>
-
-                <tr>
-                    <td>10</td>
-                    <td>Torino</td>
-                    <td>33</td> 
-                    <td>46</td>
-                </tr>
-
-                <tr>
-                    <td>11</td>
-                    <td>Monza</td>
-                    <td>33</td> 
-                    <td>43</td>
-                </tr>
-
-                <tr>
-                    <td>12</td>
-                    <td>Genoa</td>
-                    <td>33</td> 
-                    <td>39</td>
-                </tr>
-
-                <tr>
-                    <td>13</td>
-                    <td>Lecce</td>
-                    <td>33</td> 
-                    <td>35</td>
-                </tr>
-
-                <tr>
-                    <td>14</td>
-                    <td>Cagliari</td>
-                    <td>33</td> 
-                    <td>32</td>
-                </tr>
-
-                <tr>
-                    <td>15</td>
-                    <td>Hellas Verona</td>
-                    <td>33</td> 
-                    <td>31</td>
-                </tr>
-
-                <tr>
-                    <td>16</td>
-                    <td>Empoli</td>
-                    <td>33</td> 
-                    <td>31</td>
-                </tr>
-
-                <tr>
-                    <td>17</td>
-                    <td>Udinese</td>
-                    <td>33</td> 
-                    <td>28</td>
-                </tr>
-
-                <tr>
-                    <td>18</td>
-                    <td>Frosinone</td>
-                    <td>33</td> 
-                    <td>28</td>
-                </tr>
-
-                <tr>
-                    <td>19</td>
-                    <td>Sassuolo</td>
-                    <td>33</td> 
-                    <td>26</td>
-                </tr>
-
-                <tr>
-                    <td>20</td>
-                    <td>Salernitana</td>
-                    <td>33</td> 
-                    <td>15</td>
-                </tr>           
-                </tbody>
-
-            </table>
-
-        </div>
+      <div id="Data" className="Data">
+        <h2>Data</h2>
+        <h3 style={{textAlign: 'center'}}>Club standing after Matchday 33</h3>
+        <SearchBar
+        filterText={filterText}         
+        onFilterTextChange={setFilterText} />
+        <RankingTable
+        Rankings={Rankings}
+        filterText={filterText} />
+      </div>
     );
-};
 
-export default Data;
+  }
+
+
+function RankingRow({ Ranking }) {
+      
+    return (
+      <tr>
+        <td>{Ranking.Position}</td>
+        <td>{Ranking.ClubName}</td>
+        <td>{Ranking.MatchDay}</td>
+        <td>{Ranking.Points}</td>
+      </tr>
+    );
+
+  }
+
+function RankingTable({ Rankings, filterText }) {
+    const rows = [];    
+  
+    Rankings.forEach((Ranking) => {
+        if (
+            Ranking.ClubName.toLowerCase().indexOf(
+              filterText.toLowerCase()
+            ) === -1
+          ) {
+            return;
+          }      
+        rows.push(
+          <RankingRow
+          Ranking={Ranking}
+          key={Ranking.ClubName} />        
+      );
+      
+    });
+  
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Club</th>
+            <th>Match Day</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </table>
+    );
+  }
+  
+
+function SearchBar({
+  filterText,  
+  onFilterTextChange  
+}) {
+    return (
+      <form>        
+        <label>               
+          Club Data you are interested:
+          <input type="text" placeholder="Search club name..."
+          value={filterText}
+          onChange={(e) => onFilterTextChange(e.target.value)} />
+        </label>
+      </form>
+    );
+  }
+
+
+const Rankings = [
+    {Position: "1", ClubName: "Inter (Champion)", MatchDay: "33", Points: "86"},
+    {Position: "2", ClubName: "AC Milan", MatchDay: "33", Points: "69"},
+    {Position: "3", ClubName: "Juventus", MatchDay: "33", Points: "64"},
+    {Position: "4", ClubName: "Bologna", MatchDay: "33", Points: "62"},
+    {Position: "5", ClubName: "AS Roma", MatchDay: "33", Points: "55"},
+    {Position: "6", ClubName: "Atalanta", MatchDay: "33", Points: "54"},
+    {Position: "7", ClubName: "Lazio", MatchDay: "33", Points: "52"},
+    {Position: "8", ClubName: "Napoli", MatchDay: "33", Points: "49"},
+    {Position: "9", ClubName: "Fiorentina", MatchDay: "33", Points: "47"},
+    {Position: "10", ClubName: "Torino", MatchDay: "33", Points: "46"},
+    {Position: "11", ClubName: "Monza", MatchDay: "33", Points: "43"},
+    {Position: "12", ClubName: "Genoa", MatchDay: "33", Points: "39"},
+    {Position: "13", ClubName: "Lecce", MatchDay: "33", Points: "35"},
+    {Position: "14", ClubName: "Cagliari", MatchDay: "33", Points: "32"},
+    {Position: "15", ClubName: "Hellas Verona", MatchDay: "33", Points: "31"},
+    {Position: "16", ClubName: "Empoli", MatchDay: "33", Points: "31"},
+    {Position: "17", ClubName: "Udinese", MatchDay: "33", Points: "28"},
+    {Position: "18", ClubName: "Frosinone", MatchDay: "33", Points: "28"},
+    {Position: "19", ClubName: "Sassuolo", MatchDay: "33", Points: "26"},
+    {Position: "20", ClubName: "Salernitana", MatchDay: "33", Points: "15"},
+  ];
+
+    
+  export default function Data() {
+    return <FilterableTable Rankings={Rankings} />;
+  }
+
