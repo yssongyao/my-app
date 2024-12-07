@@ -82,6 +82,7 @@ function FormInfo() {
       <label for="firstname">First name</label>
         <input
          type="text"
+         aria-label="firstname"
          name="firstname"
          value={inputFields.firstname}
          onChange={handleChange}
