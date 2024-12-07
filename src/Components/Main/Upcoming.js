@@ -2,6 +2,7 @@ import React from 'react';
 import './Upcoming.css';
 import WeatherInfo from './WeatherInfo';
 import UpcomingImg from './UpcomingImg';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 const Upcoming = () => {
     return (
@@ -9,7 +10,11 @@ const Upcoming = () => {
             <h2>Upcoming</h2>
             <h3 style={{textAlign: 'center'}}>Match Day 34 of Series A</h3>
             <UpcomingImg />
-            <WeatherInfo />            
+            <React.StrictMode>
+            <ErrorBoundary>
+            <WeatherInfo />
+            </ErrorBoundary>  
+            </React.StrictMode>          
         </div>
     );
 };
