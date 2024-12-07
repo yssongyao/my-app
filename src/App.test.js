@@ -65,3 +65,4 @@ describe ('Data', () => {
     expect(unFilteredText).not.toBeInTheDocument();   
   });
 })
+
