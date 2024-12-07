@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.232c0e40.css",
+    "main.js": "/my-app/static/js/main.9f8ca3b3.js",
+    "static/js/453.ed3810f9.chunk.js": "/my-app/static/js/453.ed3810f9.chunk.js",
+    "static/media/Milano-stadio_Meazza.jpeg": "/my-app/static/media/Milano-stadio_Meazza.eecd7b840482f6a567ec.jpeg",
+    "static/media/news2.jpg": "/my-app/static/media/news2.2dc53980a29b66677897.jpg",
+    "static/media/Torino_Logo.png": "/my-app/static/media/Torino_Logo.29e3068e55bf31e603d3.png",
+    "static/media/news3.jpg": "/my-app/static/media/news3.03db00e6c85b3d69f5da.jpg",
+    "static/media/news1.jpg": "/my-app/static/media/news1.2e8ae076a978d5f522cf.jpg",
+    "static/media/inter_logo.png": "/my-app/static/media/inter_logo.0e9440ceeb98abb24537.png",
+    "static/media/black_blue.jpg": "/my-app/static/media/black_blue.300b6947cc5212e59912.jpg",
+    "index.html": "/my-app/index.html",
+    "main.232c0e40.css.map": "/my-app/static/css/main.232c0e40.css.map",
+    "main.9f8ca3b3.js.map": "/my-app/static/js/main.9f8ca3b3.js.map",
+    "453.ed3810f9.chunk.js.map": "/my-app/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.232c0e40.css",
+    "static/js/main.9f8ca3b3.js"
+  ]
+}
