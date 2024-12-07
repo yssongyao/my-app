@@ -3,6 +3,7 @@ import Header from './Components/Header/Header';
 import UpcomingImg from './Components/Main/UpcomingImg';
 import FormInfo from './Components/Aside/FormInfo';
 import HideScore from './Components/Main/HideScore';
+import Data from './Components/Aside/Data';
 
 /* Test script 1 - Render text in header*/
 describe ('Header', () => {
@@ -49,17 +50,18 @@ describe ('Highlights', () => {
   });
 })
 
-
-
-//import Navigation from './Components/Navigation/Navigation';
-
-/* Test script 6 - check Navigation  
-describe ('Navigation', () => {
-  test('Navigation is functional', () => { 
-    render(<Navigation />);  
-    const testLink = screen.getByRole('link', { name: 'Articles' });
-    fireEvent.click(testLink);    
-    expect(document.querySelector("a").getAttribute("href")).toBe('#Articles');
+/* Test script 5 - Test search function in Data section*/
+describe ('Data', () => {
+  test('Data filtered by search text', () => {
+    const { getByLabelText } = render(<Data />);
+    const inputText = getByLabelText("searchbar");    
+    expect(inputText.value).toBe("");
+    const unFilteredText=screen.getByText("Lazio");
+    expect(unFilteredText).toBeInTheDocument();
+    fireEvent.change(inputText, { target: { value: "b" }});
+    expect(inputText.value).toBe("b");
+    const filteredText=screen.getByText("Bologna");
+    expect(filteredText).toBeInTheDocument();
+    expect(unFilteredText).not.toBeInTheDocument();   
   });
 })
-*/

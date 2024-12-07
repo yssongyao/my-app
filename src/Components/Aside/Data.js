@@ -80,7 +80,7 @@ function SearchBar({
       <div className='SearchBar'>
       <form>           
         <label>Search club name:</label>                       
-        <input type="text" placeholder="Search..."
+        <input type="text" placeholder="Search..." aria-label="searchbar"
           value={filterText}
           onChange={(e) => onFilterTextChange(e.target.value)} />
         <br /><br />        
