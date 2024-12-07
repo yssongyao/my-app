@@ -10,6 +10,7 @@ const HideScore = () => {
        <label For="checkbox">Hide score
        <input
         type="checkbox"
+        aria-label="HideScore"
         name="checkbox"
         className="CheckBox"
         checked={isChecked}

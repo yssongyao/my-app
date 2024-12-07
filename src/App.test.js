@@ -2,12 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Header from './Components/Header/Header';
 import UpcomingImg from './Components/Main/UpcomingImg';
 import FormInfo from './Components/Aside/FormInfo';
-//import Navigation from './Components/Navigation/Navigation';
+import HideScore from './Components/Main/HideScore';
 
-
-
-
-/* Test script 1 - check for text in header*/ 
+/* Test script 1 - Render text in header*/
 describe ('Header', () => {
   test('Header is rendered', () => {
     render(<Header />);
@@ -15,10 +12,8 @@ describe ('Header', () => {
     expect(linkElement).toBeInTheDocument();
   });
 })
-
-
-
-/* Test script 2 - check for image in Upcoming section*/  
+ 
+/* Test script 2 - Render image in Upcoming section*/ 
 describe ('Upcoming Image', () => {
   test('image is rendered', () => {
     render(<UpcomingImg />);
@@ -28,8 +23,7 @@ describe ('Upcoming Image', () => {
   });
 })
 
-
-/* Test script 3 - check input change */
+/* Test script 3 - Test input change in Contact section*/
 describe ('Contact', () => {
   test('Input change rendered for First Name', () => {
     const { getByLabelText } = render(<FormInfo />);
@@ -40,8 +34,24 @@ describe ('Contact', () => {
   });
 })
 
+/* Test script 4 - Hide/Show Score function by click checkbox in Highlights section */ 
+describe ('Highlights', () => {
+  test('checkbox checked/unchecked to hide/show score', () => {
+    const { getByLabelText } = render(<HideScore />);
+    const checkbox = getByLabelText("HideScore");    
+    expect(checkbox.checked).toEqual(true);
+    const textChecked = screen.getByText("Inter Milan vs AC Milan");
+    expect(textChecked).toBeInTheDocument();    
+    fireEvent.click(checkbox);
+    expect(checkbox.checked).toEqual(false);  
+    const textUnChecked = screen.getByText("Inter Milan vs AC Milan 2:1");
+    expect(textUnChecked).toBeInTheDocument();       
+  });
+})
 
 
+
+//import Navigation from './Components/Navigation/Navigation';
 
 /* Test script 6 - check Navigation  
 describe ('Navigation', () => {
